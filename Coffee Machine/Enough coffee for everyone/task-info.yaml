@@ -182,7 +182,7 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/projects/33/stages/177/implement
-status: Failed
+status: Solved
 feedback:
   message: |-
     Wrong answer in test #1
@@ -203,4 +203,4 @@ feedback:
     Write how many cups of coffee you will need:
     Yes, I can make that amount of coffee
   time: Tue, 04 Aug 2020 17:49:37 UTC
-record: -1
+record: 3
