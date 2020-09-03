@@ -27,8 +27,6 @@ topics:
   - title: Printing data
     theory_id: 3749
   1:
-  - title: Computer programming
-    theory_id: 8739
   - title: Introduction to operating systems
     theory_id: 9704
   - title: Command line overview
@@ -108,6 +106,8 @@ topics:
     theory_id: 3618
   - title: Constructor
     theory_id: 3535
+  - title: Objects
+    theory_id: 4727
   - title: Instance methods
     theory_id: 3495
   - title: Static members
