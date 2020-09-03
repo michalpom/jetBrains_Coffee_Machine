@@ -38,7 +38,7 @@ public class MachineCoffee {
         System.out.println(milkSupply + " of milk");
         System.out.println(coffeeBeansSupply + " of coffee beans");
         System.out.println(cups + " of disposable cups");
-        System.out.println(money + " of money");
+        System.out.println("$" + money + " of money");
     }
 
     public void fillCoffeeMachine() {
@@ -72,20 +72,28 @@ public class MachineCoffee {
 
     public void buyCoffee() {
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
-        int buy = scanner.nextInt();
-        if (buy == 1) {
+        String buy = scanner.next();
+
+
+        if (buy.equals("1") && checkSupplies(buy)) {
+            System.out.println("I have enough resources, making you a coffee!");
+
             waterSupply = waterSupply - 250;
             coffeeBeansSupply = coffeeBeansSupply - 16;
             money = money + 4;
             cups -= 1;
 
-        } else if (buy == 2) {
+        } else if (buy.equals("2") && checkSupplies(buy)) {
+            System.out.println("I have enough resources, making you a coffee!");
+
             waterSupply = waterSupply - 350;
             milkSupply = milkSupply - 75;
             coffeeBeansSupply = coffeeBeansSupply - 20;
             money = money + 7;
             cups -= 1;
-        } else if (buy == 3) {
+        } else if (buy.equals("3") && checkSupplies(buy)) {
+            System.out.println("I have enough resources, making you a coffee!");
+
             waterSupply = waterSupply - 200;
             milkSupply = milkSupply - 100;
             coffeeBeansSupply = coffeeBeansSupply - 12;
@@ -97,5 +105,79 @@ public class MachineCoffee {
     public void takeMoney() {
         System.out.println("I gave you $" + money);
         money = 0;
+    }
+
+    private boolean checkSupplies(String typeOfCoffee) {
+
+        boolean waterOk = false, milkOk = false, beansOk = false, cupsOk = false;
+        //1.2.3
+        //water, milk, beans, cups
+        if (typeOfCoffee.equals("1")) {
+            milkOk = true;
+            if (waterSupply >= 250) {
+                waterOk = true;
+            } else {
+                waterOk = false;
+                System.out.println("Sorry, not enough water!");
+            }
+            if (coffeeBeansSupply >= 16) {
+                beansOk = true;
+            } else {
+                beansOk = false;
+                System.out.println("Sorry, not enough coffee beans!");
+            }
+        }
+        if (typeOfCoffee.equals("2")) {
+            if (waterSupply >= 350) {
+                waterOk = true;
+            } else {
+                waterOk = false;
+                System.out.println("Sorry, not enough water!");
+            }
+            if (milkSupply >= 75) {
+                milkOk = true;
+            } else {
+                milkOk = false;
+                System.out.println("Sorry, not enough milk!");
+            }
+            if (coffeeBeansSupply >= 20) {
+                beansOk = true;
+            } else {
+                beansOk = false;
+                System.out.println("Sorry, not enough coffee beans!");
+            }
+        }
+
+        if (typeOfCoffee.equals("3")) {
+            if (waterSupply >= 200) {
+                waterOk = true;
+            } else {
+                waterOk = false;
+                System.out.println("Sorry, not enough water!");
+            }
+            if (milkSupply >= 100) {
+                milkOk = true;
+            } else {
+                milkOk = false;
+                System.out.println("Sorry, not enough milk!");
+            }
+            if (coffeeBeansSupply >= 12) {
+                beansOk = true;
+            } else {
+                beansOk = false;
+                System.out.println("Sorry, not enough coffee beans!");
+            }
+        }
+
+
+        if (cups >= 1) {
+            cupsOk = true;
+        } else {
+            cupsOk = false;
+            System.out.println("Sorry, not enough cups!");
+        }
+
+
+        return waterOk & milkOk & beansOk & cupsOk;
     }
 }

@@ -9,21 +9,32 @@ public class CoffeeMachine {
 //        int cupsNeed = 0;
         MachineCoffee policeBuilding = new MachineCoffee();
 
-        policeBuilding.coffeeMachineState();
-        System.out.println("");
-        System.out.println("Write action (buy, fill, take):");
+        //policeBuilding.coffeeMachineState();
+        //System.out.println("");
 
-        String action = scanner.nextLine();
-        if (action.equals("buy")) {
-            policeBuilding.buyCoffee();
-        } else if (action.equals("fill")) {
-            policeBuilding.fillCoffeeMachine();
-        } else if (action.equals("take")) {
-            policeBuilding.takeMoney();
+        while (true) {
+
+            System.out.println("Write action (buy, fill, take, remaining, exit):");
+
+            String action = scanner.nextLine();
+            System.out.println("");
+            if (action.equals("buy")) {
+                policeBuilding.buyCoffee();
+                System.out.println("");
+            } else if (action.equals("fill")) {
+                policeBuilding.fillCoffeeMachine();
+                System.out.println("");
+            } else if (action.equals("take")) {
+                policeBuilding.takeMoney();
+                System.out.println("");
+            }else if (action.equals("remaining")){
+                policeBuilding.coffeeMachineState();
+                System.out.println("");
+            }else if (action.equals("exit")){
+                break;
+            }
+
         }
-
-        policeBuilding.coffeeMachineState();
-
 
 //        //how many cups can make
 //        int cupsAvailable = howManyCupsCanMake(waterSupply, milkSupply, coffeeBeansSupply);
@@ -32,7 +43,6 @@ public class CoffeeMachine {
 //        message(cupsNeed, cupsAvailable);
 
     }
-
 
 
 }
