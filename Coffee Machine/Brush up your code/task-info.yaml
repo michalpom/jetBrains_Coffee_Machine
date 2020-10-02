@@ -174,7 +174,7 @@ files:
             String[] lines = reply.split("\\n");
 
             if (lines.length <= 1) {
-                return CheckResult.wrong("");
+                return CheckResult.wrong("Looks like you didn't print anything!");
             }
 
             int water_ = clue.water;
@@ -282,6 +282,13 @@ files:
         }
     }
   learner_created: false
+- name: src/machine/MachineCoffee.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/33/stages/180/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/33/stages/180/implement">JetBrains
+    Academy</a>
+  time: Fri, 02 Oct 2020 17:36:49 UTC
 record: -1
